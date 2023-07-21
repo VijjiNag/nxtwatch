@@ -1,0 +1,211 @@
+.videos-container {
+  list-style-type: none;
+  margin-bottom: 20px;
+}
+
+.video-container {
+  display: flex;
+  flex-direction: column;
+}
+.thumbnail {
+  width: 350px;
+  height: 180px;
+}
+.video-link {
+  text-decoration: none;
+}
+.title-light {
+  color: #616e7c;
+  font-size: 15px;
+  margin-top: 0px;
+  font-family: roboto;
+}
+.title-dark {
+  color: #ffffff;
+  font-size: 15px;
+  margin-top: 0px;
+  font-family: roboto;
+}
+.channel-name-light {
+  color: #616e7c;
+  font-size: 15px;
+  margin-top: 0px;
+  font-family: roboto;
+}
+.views-count-light {
+  font-family: roboto;
+  color: #616e7c;
+  font-size: 15px;
+  margin-top: 0px;
+}
+.views-count-dark {
+  font-family: roboto;
+  color: #ffffff;
+  font-size: 15px;
+  margin-top: 0px;
+}
+
+.channel-name-dark {
+  color: #ffffff;
+  font-size: 15px;
+  margin-top: 0px;
+  font-family: roboto;
+}
+.video-desc-container {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  margin-top: 10px;
+  width: 100%;
+}
+.video-title-container {
+  display: flex;
+  flex-direction: column;
+}
+.video-profile-img {
+  width: 50px;
+  height: 50px;
+}
+@media screen and (max-width: 1399px) {
+  .thumbnail {
+    width: 300px;
+    height: 150px;
+  }
+}
+@media screen and (max-width: 1181px) {
+  .thumbnail {
+    width: 260px;
+  }
+  .video-desc-container {
+    width: 90%;
+  }
+  .video-profile-img {
+    width: 45px;
+    height: 45px;
+  }
+  .title-light {
+    font-size: 13px;
+  }
+  .title-dark {
+    font-size: 13px;
+  }
+  .channel-name-light {
+    font-size: 13px;
+  }
+  .channel-name-dark {
+    font-size: 13px;
+  }
+  .views-count-light {
+    font-size: 13px;
+  }
+  .views-count-dark {
+    font-size: 13px;
+  }
+}
+@media screen and (max-width: 1045px) {
+  .thumbnail {
+    width: 240px;
+  }
+  .video-desc-container {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 972px) {
+  .thumbnail {
+    width: 220px;
+    height: 130px;
+  }
+}
+@media screen and (max-width: 890px) {
+  .thumbnail {
+    width: 200px;
+    height: 100px;
+  }
+  .video-profile-img {
+    width: 40px;
+    height: 40px;
+  }
+  .title-light {
+    font-size: 11px;
+  }
+  .title-dark {
+    font-size: 11px;
+  }
+  .channel-name-light {
+    font-size: 11px;
+  }
+  .channel-name-dark {
+    font-size: 11px;
+  }
+  .views-count-light {
+    font-size: 11px;
+  }
+  .views-count-dark {
+    font-size: 11px;
+  }
+}
+@media screen and (max-width: 811px) {
+  .thumbnail {
+    width: 280px;
+    height: 130px;
+  }
+}
+@media screen and (max-width: 769px) {
+  .thumbnail {
+    width: 300px;
+    height: 150px;
+  }
+}
+@media screen and (max-width: 635px) {
+  .thumbnail {
+    width: 270px;
+  }
+}
+@media screen and (max-width: 580px) {
+  .thumbnail {
+    width: 250px;
+  }
+}
+@media screen and (max-width: 532px) {
+  .thumbnail {
+    width: 230px;
+    height: 130px;
+  }
+}
+@media screen and (max-width: 492px) {
+  .thumbnail {
+    width: 200px;
+    height: 100px;
+  }
+}
+@media screen and (max-width: 433px) {
+  .thumbnail {
+    width: 100%;
+    height: 200px;
+  }
+  .video-profile-img {
+    width: 50px;
+    height: 50px;
+  }
+  .video-desc-container {
+    padding-left: 10px;
+  }
+  .title-light {
+    font-size: 15px;
+  }
+  .title-dark {
+    font-size: 15px;
+  }
+  .channel-name-light {
+    font-size: 15px;
+  }
+  .channel-name-dark {
+    font-size: 15px;
+  }
+  .views-count-light {
+    font-size: 15px;
+  }
+  .views-count-dark {
+    font-size: 15px;
+  }
+}
