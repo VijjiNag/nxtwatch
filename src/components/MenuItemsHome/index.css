@@ -6,6 +6,8 @@
   background-size: cover;
   min-height: 100vh;
   width: 20%;
+  position: fixed;
+  top: 0;
 }
 .side-bar-container-dark {
   display: flex;
