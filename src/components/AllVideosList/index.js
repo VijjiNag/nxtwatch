@@ -18,9 +18,12 @@ const AllVideosList = props => (
       } = videosListDetails
       const {name, profileImageUrl} = channel
       const date = new Date(publishedAt)
-      const distance = formatDistanceToNow(
-        new Date(date.getFullYear(), date.getMonth(), date.getDate()),
-      ).split(' ')
+      const year = date.getFullYear()
+      const month = date.getMonth()
+      const day = date.getDate()
+      const distance = formatDistanceToNow(new Date(year, month, day)).split(
+        ' ',
+      )
 
       return (
         <Link to={`/videos/${id}`} className="video-link">

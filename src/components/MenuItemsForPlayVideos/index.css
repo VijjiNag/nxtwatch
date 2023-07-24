@@ -63,15 +63,6 @@
   padding-left: 15px;
   padding-bottom: 15px;
 }
-.menu-item-dark-trending {
-  display: flex;
-  flex-direction: row;
-  list-style-type: none;
-  margin-bottom: 15px;
-  background-color: #313131;
-  padding-top: 15px;
-  padding-left: 20px;
-}
 .menu-item {
   display: flex;
   flex-direction: row;
@@ -83,12 +74,11 @@
   display: flex;
   flex-direction: row;
 }
-.menu-item-active-light-trending {
+.all-menu-item-active-light-trending {
   display: flex;
   flex-direction: row;
   list-style-type: none;
   margin-bottom: 15px;
-  background-color: #ebebeb;
   padding-top: 15px;
   padding-left: 20px;
 }
@@ -103,9 +93,8 @@
   color: #94a3b8;
 }
 
-.menu-items-icon-active {
+.all-menu-items-icon-active {
   font-size: 20px;
-  color: #ff0000;
 }
 
 .menu-text-dark {

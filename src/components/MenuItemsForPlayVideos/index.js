@@ -44,16 +44,12 @@ class MenuItemsGaming extends Component {
                     </p>
                   </Link>
                 </li>
-                <li
-                  className={
-                    isDark ? 'menu-item-dark' : 'menu-item-active-light'
-                  }
-                >
+                <li className="menu-item">
                   <Link to="/gaming" className="menu-item-link">
-                    <SiYoutubegaming className="menu-items-icon-active" />
+                    <SiYoutubegaming className="menu-items-icon" />
                     <p
                       className={
-                        isDark ? 'menu-text-dark' : 'menu-text-active-dark'
+                        isDark ? 'menu-text-dark' : 'menu-text-active-light'
                       }
                     >
                       Gaming

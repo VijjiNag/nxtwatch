@@ -8,6 +8,7 @@ import NxtWatchContext from './context/NxtWatchContext'
 import ProtectedRoute from './components/ProtectedRoute'
 import './App.css'
 import SavedVideos from './components/SavedVideos'
+import PlayVideo from './components/PlayVideo'
 
 // Replace your code here
 class App extends Component {
@@ -37,6 +38,7 @@ class App extends Component {
           <ProtectedRoute exact path="/trending" component={TrendingVideos} />
           <ProtectedRoute exact path="/gaming" component={Gaming} />
           <ProtectedRoute exact path="/saved-videos" component={SavedVideos} />
+          <ProtectedRoute exact path="/videos/:id" component={PlayVideo} />
         </Switch>
       </NxtWatchContext.Provider>
     )
