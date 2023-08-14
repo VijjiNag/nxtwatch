@@ -1,18 +1,34 @@
 .nav-container-light {
   background-color: #ffffff;
   background-size: cover;
-  height: 13vh;
+  height: 10vh;
   display: flex;
   width: 100%;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   padding-top: 15px;
   padding-left: 5%;
-  padding-right: 5%;
+  padding-right: 20px;
   padding-bottom: 15px;
   margin-right: 0px;
-  position: fixed;
-  top: 0;
+}
+.menu-container-mobile-light {
+  background-color: #ffffff;
+  background-size: cover;
+}
+
+.menu-container-mobile-close {
+  display: none;
+}
+
+.menu-container-mobile-open {
+  display: block;
+}
+
+.menu-container-mobile-dark {
+  background-color: #231f20;
+  background-size: cover;
 }
 
 .logout-btn-light {
@@ -26,7 +42,6 @@
   font-weight: bold;
   cursor: pointer;
   border-radius: 5px;
-  margin-top: 9px;
 }
 
 .logout-btn-dark {
@@ -40,7 +55,6 @@
   font-weight: bold;
   cursor: pointer;
   border-radius: 5px;
-  margin-top: 9px;
 }
 
 .profile-img {
@@ -56,16 +70,15 @@
 .nav-container-dark {
   background-color: #231f20;
   background-size: cover;
-  height: 13vh;
+  height: 10vh;
   display: flex;
   width: 100%;
   flex-direction: row;
   justify-content: space-between;
   padding-top: 15px;
   padding-left: 5%;
-  padding-right: 5%;
+  padding-right: 20px;
   padding-bottom: 15px;
-  position: fixed;
 }
 
 .nav-links-list-container {
@@ -169,6 +182,13 @@
   margin-top: 0px;
   color: #94a3b8;
 }
+.menu-list-container-mobile {
+  display: flex;
+  flex-direction: column;
+  padding-top: 80px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
 @media screen and (max-width: 769px) {
   .profile-btn {
     display: none;
@@ -185,6 +205,12 @@
     display: none;
   }
   .logout-btn-mobile {
+    display: none;
+  }
+  .menu-container-mobile-light {
+    display: none;
+  }
+  .menu-container-mobile-dark {
     display: none;
   }
 }

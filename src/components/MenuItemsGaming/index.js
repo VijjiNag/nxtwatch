@@ -46,7 +46,9 @@ class MenuItemsGaming extends Component {
                 </li>
                 <li
                   className={
-                    isDark ? 'menu-item-dark' : 'menu-item-active-light'
+                    isDark
+                      ? 'menu-item-dark-trending'
+                      : 'menu-item-active-light-trending'
                   }
                 >
                   <Link to="/gaming" className="menu-item-link">

@@ -1,9 +1,144 @@
 import {Component} from 'react'
+import Loader from 'react-loader-spinner'
+import Cookies from 'js-cookie'
+import {SiYoutubegaming} from 'react-icons/si'
 import Header from '../Header'
+import './index.css'
 import MenuItemsGaming from '../MenuItemsGaming'
+import GamingVideos from '../GamingVideos'
 import NxtWatchContext from '../../context/NxtWatchContext'
 
-class Gaming extends Component {
+const apiStatusConstants = {
+  initial: 'INITIAL',
+  success: 'SUCCESS',
+  failure: 'FAILURE',
+  inProgress: 'IN_PROGRESS',
+}
+
+class TrendingVideos extends Component {
+  state = {
+    gamingVideosList: [],
+    apiStatus: apiStatusConstants.initial,
+  }
+
+  componentDidMount() {
+    this.getGamingVideos()
+  }
+
+  getGamingVideos = async () => {
+    const jwtToken = Cookies.get('jwt_token')
+    this.setState({apiStatus: apiStatusConstants.inProgress})
+    const url = 'https://apis.ccbp.in/videos/gaming'
+    const options = {
+      headers: {
+        Authorization: `Bearer ${jwtToken}`,
+      },
+      method: 'GET',
+    }
+    const response = await fetch(url, options)
+    if (response.ok === true) {
+      const fetchedData = await response.json()
+      const updatedData = fetchedData.videos.map(eachList => ({
+        id: eachList.id,
+        thumbnailUrl: eachList.thumbnail_url,
+        title: eachList.title,
+        viewCount: eachList.view_count,
+      }))
+      this.setState({
+        gamingVideosList: updatedData,
+        apiStatus: apiStatusConstants.success,
+      })
+    } else {
+      this.setState({apiStatus: apiStatusConstants.failure})
+    }
+  }
+
+  renderFailureView = () => (
+    <NxtWatchContext.Consumer>
+      {value => {
+        const {isDark} = value
+        return (
+          <div className="failure-img-container">
+            <img
+              className="failure-img"
+              src={
+                isDark
+                  ? 'https://assets.ccbp.in/frontend/react-js/nxt-watch-failure-view-dark-theme-img.png'
+                  : 'https://assets.ccbp.in/frontend/react-js/nxt-watch-failure-view-light-theme-img.png'
+              }
+              alt=""
+            />
+            <h1 className={isDark ? 'error-head-dark' : 'error-head-light'}>
+              Oops! Something Went Wrong
+            </h1>
+            <p className="error-desc">
+              We are having some trouble to complete your request. Please try
+              again.
+            </p>
+            <button
+              type="button"
+              className="retry-btn-light"
+              onClick={this.onClickErrorRetryBtn}
+            >
+              Retry
+            </button>
+          </div>
+        )
+      }}
+    </NxtWatchContext.Consumer>
+  )
+
+  renderGamingVideos = () => (
+    <NxtWatchContext.Consumer>
+      {value => {
+        const {isDark} = value
+        const {gamingVideosList} = this.state
+        return (
+          <>
+            <ul className="gaming-videos-list-container">
+              {gamingVideosList.map(eachList => (
+                <GamingVideos gamingVideosList={eachList} key={eachList.id} />
+              ))}
+            </ul>
+          </>
+        )
+      }}
+    </NxtWatchContext.Consumer>
+  )
+
+  renderLoadingView = () => (
+    <NxtWatchContext.Consumer>
+      {value => {
+        const {isDark} = value
+        return (
+          <div className="loader-container" data-testid="loader">
+            <Loader
+              type="ThreeDots"
+              color={isDark ? '#ffffff' : '#00306e'}
+              height="50"
+              width="50"
+            />
+          </div>
+        )
+      }}
+    </NxtWatchContext.Consumer>
+  )
+
+  renderApiStatusView = () => {
+    const {apiStatus} = this.state
+
+    switch (apiStatus) {
+      case apiStatusConstants.success:
+        return this.renderGamingVideos()
+      case apiStatusConstants.failure:
+        return this.renderFailureView()
+      case apiStatusConstants.inProgress:
+        return this.renderLoadingView()
+      default:
+        return null
+    }
+  }
+
   render() {
     return (
       <NxtWatchContext.Consumer>
@@ -12,8 +147,45 @@ class Gaming extends Component {
           return (
             <div>
               <Header />
-              <div className="gaming-container">
+              <div className="home-container">
                 <MenuItemsGaming />
+                <div
+                  className={
+                    isDark
+                      ? 'gaming-home-container-dark'
+                      : 'gaming-home-container'
+                  }
+                >
+                  <div
+                    className={
+                      isDark
+                        ? 'gaming-head-bg-container-dark'
+                        : 'gaming-head-bg-container'
+                    }
+                  >
+                    <div className="gaming-head-container">
+                      <div
+                        className={
+                          isDark
+                            ? 'gaming-logo-container-dark'
+                            : 'gaming-logo-container'
+                        }
+                      >
+                        <SiYoutubegaming className="gaming-logo" />
+                      </div>
+                      <div>
+                        <h1
+                          className={
+                            isDark ? 'gaming-head-dark' : 'gaming-head'
+                          }
+                        >
+                          Gaming
+                        </h1>
+                      </div>
+                    </div>
+                  </div>
+                  {this.renderApiStatusView()}
+                </div>
               </div>
             </div>
           )
@@ -23,4 +195,4 @@ class Gaming extends Component {
   }
 }
 
-export default Gaming
+export default TrendingVideos

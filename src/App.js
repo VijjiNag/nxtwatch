@@ -10,10 +10,13 @@ import './App.css'
 import SavedVideos from './components/SavedVideos'
 import PlayVideo from './components/PlayVideo'
 
-// Replace your code here
 class App extends Component {
   state = {
+    savedVideosList: [],
     isDark: false,
+    isLiked: false,
+    isDisLiked: false,
+    isSaved: false,
   }
 
   onChangeTheme = () => {
@@ -22,14 +25,58 @@ class App extends Component {
     }))
   }
 
+  onSaveButton = savedVideo => {
+    const {savedVideosList} = this.state
+    const videoObject = savedVideosList.find(
+      eachSavedItem => eachSavedItem.id === savedVideo.id,
+    )
+
+    this.setState(prevState => ({
+      isSaved: !prevState.isSaved,
+    }))
+
+    if (videoObject) {
+      this.setState(prevState => ({
+        savedVideosList: prevState.savedVideosList.map(eachList => {
+          if (videoObject.id === eachList.id) {
+            return {
+              ...eachList,
+              isLiked: eachList.isLiked,
+              isDisLiked: eachList.isDisLiked,
+              isSaved: eachList.isSaved,
+            }
+          }
+          return eachList
+        }),
+      }))
+    } else {
+      const updatedVideosList = [...savedVideosList, savedVideo]
+      this.setState({savedVideosList: updatedVideosList})
+    }
+  }
+
+  onDisLikeBtn = id => {
+    this.setState({isDisLiked: true, isLiked: false})
+  }
+
+  onLikeBtn = id => {
+    this.setState({isLiked: true, isDisLiked: false})
+  }
+
   render() {
-    const {isDark} = this.state
-    console.log(isDark)
+    const {isDark, savedVideosList, isDisLiked, isLiked, isSaved} = this.state
     return (
       <NxtWatchContext.Provider
         value={{
+          savedVideosList,
+          isLiked,
+          isDisLiked,
+          isSaved,
           isDark,
           onChangeTheme: this.onChangeTheme,
+          onSaveButton: this.onSaveButton,
+          onLikeBtn: this.onLikeBtn,
+          onDisLikeBtn: this.onDisLikeBtn,
         }}
       >
         <Switch>

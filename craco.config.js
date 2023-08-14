@@ -4,7 +4,7 @@ module.exports = {
       [
         'babel-plugin-styled-components',
         {
-          fileName: false,
+          fileName: true,
         },
       ],
     ],

@@ -1,0 +1,108 @@
+.trending-list-item {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 30px;
+}
+.trending-thumbnail {
+  width: 350px;
+}
+.trending-video-desc {
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
+  width: 43%;
+  color: #1e293b;
+}
+.trending-video-title {
+  font-family: roboto;
+  font-size: 20px;
+  margin-top: 0px;
+}
+.trending-video-title-dark {
+  font-family: roboto;
+  font-size: 20px;
+  margin-top: 0px;
+  color: #ffffff;
+}
+.trending-channel-name {
+  font-family: roboto;
+  font-weight: 500;
+  color: #616e7c;
+}
+.trending-profile-img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  display: none;
+}
+.profile-img-container {
+  display: flex;
+  flex-direction: row;
+}
+.trending-views-count {
+  font-family: roboto;
+  font-weight: 500;
+  color: #616e7c;
+  margin-top: 0px;
+}
+@media screen and (max-width: 924px) {
+  .trending-thumbnail {
+    width: 300px;
+  }
+}
+@media screen and (max-width: 630px) {
+  .trending-thumbnail {
+    width: 250px;
+  }
+  .trending-video-title {
+    font-size: 17px;
+  }
+  .trending-video-title-dark {
+    font-size: 17px;
+  }
+  .trending-channel-name {
+    font-size: 15px;
+  }
+  .trending-views-count {
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 501px) {
+  .trending-list-item {
+    flex-direction: column;
+  }
+  .trending-profile-img {
+    display: block;
+  }
+  .trending-thumbnail {
+    width: 100%;
+  }
+  .trending-video-desc {
+    margin-top: 20px;
+    width: 95%;
+  }
+  .trending-channel-container {
+    margin-left: 60px;
+  }
+  .trending-channel-name {
+    margin-top: 0px;
+    margin-right: 10px;
+  }
+}
+@media screen and (max-width: 329px) {
+  .trending-video-desc {
+    width: 90%;
+  }
+  .trending-video-title {
+    font-size: 14px;
+  }
+  .trending-video-title-dark {
+    font-size: 14px;
+  }
+  .trending-channel-name {
+    font-size: 13px;
+  }
+  .trending-views-count {
+    font-size: 13px;
+  }
+}

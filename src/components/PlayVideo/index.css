@@ -12,7 +12,7 @@
   padding-bottom: 20px;
   padding-left: 20px;
   padding-right: 20px;
-  padding-top: 130px;
+  padding-top: 40px;
 }
 .play-container-light {
   display: flex;
@@ -24,14 +24,13 @@
   padding-bottom: 20px;
   padding-left: 20px;
   padding-right: 20px;
-  padding-top: 130px;
+  padding-top: 40px;
 }
 .video-container {
   width: 100%;
 }
 .video {
   min-width: 100%;
-  min-height: 60vh;
 }
 .video-responsive-container {
   display: flex;
@@ -43,7 +42,232 @@
   margin-top: 25px;
   color: #475569;
 }
+.play-video-head-dark {
+  font-family: roboto;
+  font-size: 20px;
+  margin-top: 25px;
+  color: #ffffff;
+}
+.views-text {
+  font-family: roboto;
+  color: #64748b;
+  font-weight: 500;
+}
 .views-container {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+}
+.likes-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 13px;
+}
+.like-icon {
+  font-size: 20px;
+  color: #64748b;
+}
+.like-text {
+  font-family: roboto;
+  color: #64748b;
+  margin-top: 0px;
+  margin-left: 5px;
+  margin-right: 20px;
+  font-weight: 500;
+}
+.like-btn {
+  background-color: transparent;
+  border-width: 0px;
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+}
+.like-icon-active {
+  font-size: 20px;
+  color: #4f46e5;
+}
+.like-text-active {
+  font-family: roboto;
+  color: #4f46e5;
+  margin-top: 0px;
+  margin-left: 5px;
+  margin-right: 20px;
+  font-weight: 500;
+}
+.hr-line {
+  width: 100%;
+  background-color: #cbd5e1;
+  margin-top: 20px;
+}
+.video-desc-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.video-profile-image {
+  height: 60px;
+  width: 60px;
+}
+.video-channel-name {
+  font-family: roboto;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 18px;
+  margin-left: 20px;
+  color: #1e293b;
+  font-weight: 500;
+}
+.video-channel-name-dark {
+  font-family: roboto;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 18px;
+  margin-left: 20px;
+  color: #ffffff;
+  font-weight: 500;
+}
+.channel-name-container {
+  display: flex;
+  flex-direction: column;
+}
+.subscriber-count {
+  font-family: roboto;
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #64748b;
+  margin-left: 20px;
+}
+.desc {
+  font-family: roboto;
+  margin-left: 85px;
+  line-height: 1.5;
+  font-weight: 500;
+  color: #64748b;
+}
+.desc-dark {
+  font-family: roboto;
+  margin-left: 85px;
+  line-height: 1.5;
+  font-weight: 500;
+  color: #ffffff;
+}
+@media screen and (max-width: 845px) {
+  .video {
+    max-width: 75%;
+  }
+}
+@media screen and (max-width: 540px) {
+  .views-container {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .play-video-head {
+    font-size: 17px;
+  }
+  .play-video-head-dark {
+    font-size: 17px;
+  }
+  .views-text {
+    font-size: 15px;
+  }
+  .video-profile-image {
+    height: 50px;
+    width: 50px;
+  }
+  .channel-name {
+    font-size: 15px;
+  }
+  .channel-name-dark {
+    font-size: 15px;
+  }
+  .subscriber-count {
+    font-size: 12px;
+  }
+  .desc {
+    font-size: 15px;
+    margin-left: 0px;
+  }
+  .desc-dark {
+    font-size: 15px;
+    margin-left: 0px;
+  }
+}
+@media screen and (max-width: 640px) {
+  .video {
+    max-height: 40vh;
+  }
+}
+@media screen and (max-width: 400px) {
+  .play-container-dark {
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 100px;
+  }
+  .play-container-light {
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 100px;
+  }
+  .play-video-head {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+  .play-video-head-dark {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+  .views-container {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+  .desc {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+  .desc-dark {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+  .hr-line {
+    width: 95%;
+  }
+}
+@media screen and (min-width: 1248px) {
+  .play-container-light {
+    padding-top: 20px;
+  }
+  .play-container-dark {
+    padding-top: 20px;
+  }
+}
+@media screen and (max-width: 1248px) {
+  .play-container-light {
+    padding-top: 20px;
+  }
+  .play-container-dark {
+    padding-top: 20px;
+  }
+}
+@media screen and (max-width: 769px) {
+  .play-container-light {
+    padding-top: 10px;
+  }
+  .play-container-dark {
+    padding-top: 10px;
+  }
+  .play-container-light {
+    width: 100%;
+  }
+  .play-container-dark {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 400px) {
+  .play-container-light {
+    padding-top: 0px;
+  }
+  .play-container-dark {
+    padding-top: 0px;
+  }
 }

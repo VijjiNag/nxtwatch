@@ -25,7 +25,9 @@ class MenuItemsGaming extends Component {
                     <AiFillHome className="menu-items-icon" />
                     <p
                       className={
-                        isDark ? 'menu-text-dark' : 'menu-text-active-light'
+                        isDark
+                          ? 'menu-text-dark-video'
+                          : 'menu-text-active-light-video'
                       }
                     >
                       Home
@@ -37,7 +39,9 @@ class MenuItemsGaming extends Component {
                     <HiFire className="menu-items-icon" />
                     <p
                       className={
-                        isDark ? 'menu-text-dark' : 'menu-text-active-light'
+                        isDark
+                          ? 'menu-text-dark-video'
+                          : 'menu-text-active-light-video'
                       }
                     >
                       Trending
@@ -49,7 +53,9 @@ class MenuItemsGaming extends Component {
                     <SiYoutubegaming className="menu-items-icon" />
                     <p
                       className={
-                        isDark ? 'menu-text-dark' : 'menu-text-active-light'
+                        isDark
+                          ? 'menu-text-dark-video'
+                          : 'menu-text-active-light-video'
                       }
                     >
                       Gaming
@@ -61,7 +67,9 @@ class MenuItemsGaming extends Component {
                     <BiListPlus className="menu-items-icon" />
                     <p
                       className={
-                        isDark ? 'menu-text-dark' : 'menu-text-active-light'
+                        isDark
+                          ? 'menu-text-dark-video'
+                          : 'menu-text-active-light-video'
                       }
                     >
                       Saved videos
