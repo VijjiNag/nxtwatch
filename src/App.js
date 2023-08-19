@@ -16,7 +16,6 @@ class App extends Component {
     isDark: false,
     isLiked: false,
     isDisLiked: false,
-    isSaved: false,
   }
 
   onChangeTheme = () => {
@@ -25,15 +24,19 @@ class App extends Component {
     }))
   }
 
+  onSavedButton = id => {
+    const {savedVideosList} = this.state
+    const updatedVideosList = savedVideosList.filter(
+      eachItem => eachItem.id !== id,
+    )
+    this.setState({savedVideosList: updatedVideosList})
+  }
+
   onSaveButton = savedVideo => {
     const {savedVideosList} = this.state
     const videoObject = savedVideosList.find(
       eachSavedItem => eachSavedItem.id === savedVideo.id,
     )
-
-    this.setState(prevState => ({
-      isSaved: !prevState.isSaved,
-    }))
 
     if (videoObject) {
       this.setState(prevState => ({
@@ -41,9 +44,6 @@ class App extends Component {
           if (videoObject.id === eachList.id) {
             return {
               ...eachList,
-              isLiked: eachList.isLiked,
-              isDisLiked: eachList.isDisLiked,
-              isSaved: eachList.isSaved,
             }
           }
           return eachList
@@ -51,32 +51,34 @@ class App extends Component {
       }))
     } else {
       const updatedVideosList = [...savedVideosList, savedVideo]
-      this.setState({savedVideosList: updatedVideosList})
+      this.setState({
+        savedVideosList: updatedVideosList,
+      })
     }
   }
 
-  onDisLikeBtn = id => {
+  onDisLikeBtn = () => {
     this.setState({isDisLiked: true, isLiked: false})
   }
 
-  onLikeBtn = id => {
+  onLikeBtn = () => {
     this.setState({isLiked: true, isDisLiked: false})
   }
 
   render() {
-    const {isDark, savedVideosList, isDisLiked, isLiked, isSaved} = this.state
+    const {isDark, savedVideosList, isLiked, isDisLiked} = this.state
     return (
       <NxtWatchContext.Provider
         value={{
           savedVideosList,
+          isDark,
           isLiked,
           isDisLiked,
-          isSaved,
-          isDark,
           onChangeTheme: this.onChangeTheme,
           onSaveButton: this.onSaveButton,
           onLikeBtn: this.onLikeBtn,
           onDisLikeBtn: this.onDisLikeBtn,
+          onSavedButton: this.onSavedButton,
         }}
       >
         <Switch>

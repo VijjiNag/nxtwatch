@@ -59,6 +59,7 @@ class PlayVideo extends Component {
         title: fetchedData.video_details.title,
         videoUrl: fetchedData.video_details.video_url,
         viewCount: fetchedData.video_details.view_count,
+        isSaved: false,
         channel: {
           name: fetchedData.video_details.channel.name,
           profileImageUrl: fetchedData.video_details.channel.profile_image_url,
@@ -110,10 +111,17 @@ class PlayVideo extends Component {
           onLikeBtn,
           isLiked,
           isDisLiked,
-          isSaved,
           onDisLikeBtn,
+          savedVideosList,
+          onSavedButton,
         } = value
-        const {playVideosDetails, timeDistance, isPlaying, channel} = this.state
+        const {
+          playVideosDetails,
+          timeDistance,
+          isPlaying,
+          channel,
+          isSaved,
+        } = this.state
         const {
           id,
           description,
@@ -122,6 +130,12 @@ class PlayVideo extends Component {
           videoUrl,
           viewCount,
         } = playVideosDetails
+
+        const isPresent = savedVideosList.find(
+          each => each.id === playVideosDetails.id,
+        )
+
+        console.log(savedVideosList)
 
         const onClickPlay = () => {
           this.setState(prevState => ({isPlaying: !prevState.isPlaying}))
@@ -135,9 +149,12 @@ class PlayVideo extends Component {
           onDisLikeBtn(id)
         }
 
+        const onClickSavedButton = () => {
+          onSavedButton(id)
+        }
+
         const onClickSaveButton = () => {
-          this.setState(prevState => ({isSaved: !prevState.isSaved}))
-          onSaveButton({...playVideosDetails, isSaved, isLiked, isDisLiked})
+          onSaveButton({...playVideosDetails, isSaved})
         }
 
         return (
@@ -189,18 +206,25 @@ class PlayVideo extends Component {
                       Dislike
                     </p>
                   </button>
-                  <button
-                    type="button"
-                    className="like-btn"
-                    onClick={onClickSaveButton}
-                  >
-                    <BiListPlus
-                      className={isSaved ? 'like-icon-active' : 'like-icon'}
-                    />
-                    <p className={isSaved ? 'like-text-active' : 'like-text'}>
-                      {isSaved ? 'Saved' : 'Save'}
-                    </p>
-                  </button>
+                  {isPresent === undefined ? (
+                    <button
+                      type="button"
+                      className="like-btn"
+                      onClick={onClickSaveButton}
+                    >
+                      <BiListPlus className="like-icon" />
+                      <p className="like-text">Save</p>
+                    </button>
+                  ) : (
+                    <button
+                      type="button"
+                      className="like-btn"
+                      onClick={onClickSavedButton}
+                    >
+                      <BiListPlus className="like-icon-active" />
+                      <p className="like-text-active">Saved</p>
+                    </button>
+                  )}
                 </div>
               </div>
               <div className="hr-container">

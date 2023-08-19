@@ -6,6 +6,7 @@ const NxtWatchContext = React.createContext({
   onSaveButton: () => {},
   onLikeBtn: () => {},
   onDisLikeBtn: () => {},
+  onSavedButton: () => {},
 })
 
 export default NxtWatchContext
