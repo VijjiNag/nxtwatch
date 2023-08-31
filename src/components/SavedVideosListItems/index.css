@@ -1,0 +1,35 @@
+.saved-video {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
+.saved-video-desc-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  padding-right: 20px;
+}
+.saved-video-head {
+  font-family: roboto;
+  margin-top: 0px;
+}
+.saved-video-channel-name {
+  font-family: roboto;
+  color: #616e7c;
+  margin-top: 0px;
+  font-weight: 600;
+}
+.saved-video-thumbnail {
+  width: 350px;
+  height: 200px;
+}
+.video-link {
+  text-decoration: none;
+  color: black;
+}
+.saved-video-view-count {
+  font-family: roboto;
+  color: #616e7c;
+  margin-top: 0px;
+  font-weight: 600;
+}

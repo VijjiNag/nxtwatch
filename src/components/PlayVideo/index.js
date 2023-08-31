@@ -59,7 +59,6 @@ class PlayVideo extends Component {
         title: fetchedData.video_details.title,
         videoUrl: fetchedData.video_details.video_url,
         viewCount: fetchedData.video_details.view_count,
-        isSaved: false,
         channel: {
           name: fetchedData.video_details.channel.name,
           profileImageUrl: fetchedData.video_details.channel.profile_image_url,

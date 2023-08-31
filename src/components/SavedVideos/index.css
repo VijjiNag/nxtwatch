@@ -1,4 +1,28 @@
-.saved-container {
+.saved-videos-list-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+}
+.no-saved-videos-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 25px;
+}
+.no-saved-img {
+  width: 400px;
+}
+.no-saved-head {
+  margin-top: 40px;
+}
+.no-saved-desc {
+  color: #616e7c;
+  font-weight: 500;
+  margin-top: 5px;
+  font-size: 20px;
+}
+.no-saved-head-dark {
+  margin-top: 40px;
+  color: #ffffff;
 }
